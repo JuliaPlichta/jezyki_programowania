@@ -12,9 +12,12 @@ int main() {
   printf("podaj operacje jaka chcesz wykonac:\n(1-dodawanie, 2-odejmowanie, 3-mnozenie, 4-dzielenie)\n");
   scanf("%d", &x);
 
-  if ((x != 1) && (x != 2) && (x != 3) && (x != 4)) {
-    printf("wybrales nieprawidlowa liczbe!\n");
+  do {
+    printf("wybrales nieprawidlowa liczbe!\n\n");
+    printf("podaj operacje jaka chcesz wykonac:\n(1-dodawanie, 2-odejmowanie, 3-mnozenie, 4-dzielenie)\n");
+    scanf("%d", &x);
   }
+  while((x != 1) && (x != 2) && (x != 3) && (x != 4));
 
   if (x == 1) {
     printf("%f\n", a + b);

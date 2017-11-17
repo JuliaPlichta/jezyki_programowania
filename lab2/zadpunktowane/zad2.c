@@ -2,8 +2,9 @@
 
 int main() {
   int a, b, j, wynik;
+  printf("Program liczy silnie podanej liczby\n\n");
 //-------------- do while --------------
-  printf("podaj a: ");
+  printf("Podaj liczbe: ");
   scanf("%d", &a);
 
   if (a == 0) {
@@ -22,7 +23,7 @@ int main() {
     printf("wynik = %d\n", wynik);
   }
 //-------------- while ----------------
-  printf("podaj a: ");
+  printf("Podaj liczbe: ");
   scanf("%d", &a);
 
   if (a == 0) {
@@ -41,7 +42,7 @@ int main() {
     printf("wynik = %d\n", wynik);
   }
 //-------------- for -----------------
-  printf("podaj a: ");
+  printf("Podaj liczbe: ");
   scanf("%d", &a);
   if (a == 0) {
     printf("wynik = 1\n");

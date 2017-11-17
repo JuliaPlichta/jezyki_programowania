@@ -3,9 +3,10 @@
 int main() {
   int a, b;
   
-  printf("podaj a: ");
+  printf("Program wypisuje liczby z podanego przedialu\n\n");
+  printf("Podaj dolna granice przedzialu: ");
   scanf("%d", &a);
-  printf("podaj b: ");
+  printf("Podaj gorna granice przedzialu: ");
   scanf("%d", &b);
 
 //---------do while----------
@@ -15,9 +16,9 @@ int main() {
     j++;
   } while(j <= b);
 
-  printf("podaj a: ");
+  printf("Podaj dolna granice przedzialu: ");
   scanf("%d", &a);
-  printf("podaj b: ");
+  printf("Podaj gorna granice przedzialu: ");
   scanf("%d", &b);
 //----------while------------
   j = a;
@@ -26,9 +27,9 @@ int main() {
     j++;
   }
 
-  printf("podaj a: ");
+  printf("Podaj dolna granice przedzialu: ");
   scanf("%d", &a);
-  printf("podaj b: ");
+  printf("Podaj gorna granice przedzialu: ");
   scanf("%d", &b);
 //-----------for-------------
   for (j = a; j <= b; j++) {

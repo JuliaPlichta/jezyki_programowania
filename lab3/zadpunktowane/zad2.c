@@ -1,24 +1,24 @@
 #include "stdio.h"
 
-/*nwd() {
-
+int nwd(int num1, int num2) {
+  int reszta, wynik;
+  for (int j = 2; j <= num1; j++) {
+    if ((num1%j == 0) && (num2%j == 0)) {
+      wynik = j;
+    }
+  }
+  printf("NWD(%d,%d) = %d\n",num1, num2, wynik);
 }
-*/
 
 int main() {
-  int num1, num2, reszta, a = 1;
+  int liczba1, liczba2;
 
   printf("Program liczy NWD dwoch podanych liczb\n\n");
   printf("Podaj pierwsza liczbe: ");
-  scanf("%d", &num1);
+  scanf("%d", &liczba1);
   printf("Podaj druga liczbe: ");
-  scanf("%d", &num2);
+  scanf("%d", &liczba2);
 
-for (int j = 2; j < num1; j++) {
-  if ((num1%j == 0) && (num2%j == 0)) {
-    printf("%d, ", j);
-  }
-}
-
+  nwd(liczba1, liczba2);
 
 }

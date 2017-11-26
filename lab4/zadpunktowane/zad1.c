@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-/*
-int funkcja(int a){
-    if (a < 2) return 1;
-    else return funkcja(a - 1)+a;
+
+/*int funkcja(int kwota){
+    if (a < 2) return 0;
+    else return funkcja(kwota - tab[])+a;
 }
 */
 
@@ -16,20 +16,15 @@ int main() {
   printf("Kwota: %.2f\n", kwota);
 
   double tab[] = {500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01};
-//  for(int i=0; i<15; i++){
-//    printf("%.2f\n", tab[i]);
-//  }
-
 
 //for (int i = 0; i < 15; i++) {
 //  printf("%.1f x %.2f\n", kwota/tab[i], tab[i]);
 //}
 
-
   for (int i = 0; i < 15; i++) {
     int a = 0;
-    while (kwota >= tab[i]) {
-      kwota = kwota - tab[i];
+    while (kwota/tab[i] >= 1) {
+      kwota = kwota-tab[i];
       a += 1;
       printf("  %.2f x %d\n", tab[i], a);
       printf("  kwota do wydania: %.2f\n", kwota);
@@ -41,6 +36,12 @@ int main() {
     }
 
   }
+
+
+
+
+
+
 /*  while (kwota > tab[2]) {
     kwota = kwota - tab[2];
     a += 1;

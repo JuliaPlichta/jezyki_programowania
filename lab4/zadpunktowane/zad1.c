@@ -1,62 +1,29 @@
 #include <stdio.h>
 
-
-/*int funkcja(int kwota){
-    if (a < 2) return 0;
-    else return funkcja(kwota - tab[])+a;
+void bankomat(int kwota, int i){
+  i++;
+  int ile[15];
+  int nominaly[] = {50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+  // nominaly sa pomnozone razy 100, aby uniknac bledow w programie
+  if (kwota == 0) return;
+  else if (kwota > 0){
+    ile[i] = (int)(kwota / nominaly[i]);
+    kwota = kwota - (ile[i] * nominaly[i]);
+    if (ile[i] != 0) {
+      printf("Wyplacono: %d x %.2lf PLN\n", ile[i], (double)nominaly[i]/100);
+    }
+    return bankomat(kwota, i);
+  }
 }
-*/
 
 int main() {
-  double kwota;
+  int i=-1;
+  double kasa;
   printf("Program 'wyda' kwote jaka poda uzytkownik\n\n");
-  printf("Podaj kwote jaka chcesz wyplacic: ");
-  scanf("%lf", &kwota);
+  printf("Podaj kwote do wyplacenia: ");
+  scanf("%lf", &kasa);
+  int kasa2 = 100 * kasa;
+  bankomat(kasa2, i);
 
-  printf("Kwota: %.2f\n", kwota);
-
-  double tab[] = {500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01};
-
-//for (int i = 0; i < 15; i++) {
-//  printf("%.1f x %.2f\n", kwota/tab[i], tab[i]);
-//}
-
-  for (int i = 0; i < 15; i++) {
-    int a = 0;
-    while (kwota/tab[i] >= 1) {
-      kwota = kwota-tab[i];
-      a += 1;
-      printf("  %.2f x %d\n", tab[i], a);
-      printf("  kwota do wydania: %.2f\n", kwota);
-
-      if (kwota == 0) {
-        printf("Udało się!\n");
-      }
-
-    }
-
-  }
-
-
-
-
-
-
-/*  while (kwota > tab[2]) {
-    kwota = kwota - tab[2];
-    a += 1;
-    printf("  kwota do wydania: %.2f\n", kwota);
-    printf("  %.2f x %d\n", tab[2], a);
-  }
-*/
-/*  if (kwota > tab[2]) {
-    kwota = kwota - tab[2];
-    a += 1;
-    printf("  kwota do wydania: %.2f\n", kwota);
-    printf("  %.2f x %d\n", tab[2], a);
-  }
-*/
-
-//  printf("suma liczb od 1 do %d = %d\n", x, funkcja(x));
-  printf("\n");
+  return 0;
 }

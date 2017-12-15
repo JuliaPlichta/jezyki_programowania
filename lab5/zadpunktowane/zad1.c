@@ -67,12 +67,12 @@ void czy_dobre_xy() {
   }
 }
 
-/* Funkcja sprawdza czy plansza jest pelna */
+/* Funkcja sprawdza czy plansza jest zapelniona */
 int pelna(char plansza[3][3]){
   for (int i=0; i<3; i++)
     for (int j=0; j<3; j++)
       if (plansza[i][j] == ' ')
-        return 0;
+        return 0;  // ---> jesli jest wolne pole zwroc 0
    return 1;  // ---> plansza jest pelna
 }
 

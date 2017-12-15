@@ -6,6 +6,18 @@
 int size;
 int x, y;
 
+void czy_dobry_size() {
+  printf("Podaj rozmiar planszy na jakiej chcesz grac (od 3 do 10): ");
+  scanf("%d", &size);
+  while (size>10 || size<3) {
+    if (size>10 || size<3) {
+      printf("Nieprawidlowa wielkosc planszy!\nPodaj wielkosc jeszcze raz: ");
+      scanf("%d", &size);
+    }
+  }
+  printf("Rozmiar planszy to %d x %d\n", size, size);
+}
+
 /* Funkcja wyswietla plansze */
 void wyswietlanie(char plansza[size][size]) {
   printf("\n");
@@ -33,12 +45,11 @@ void czy_dobre_xy() {
   }
 }
 
-/* Funkcja sprawdza czy plansza jest pelna */
+/* Funkcja sprawdza czy plansza jest zapelniona */
 int pelna(char plansza[size][size]){
   for (int i=0; i<size; i++)
     for (int j=0; j<size; j++)
-      if (plansza[i][j] == ' ')
-        return 0;
+      if (plansza[i][j] == ' ') return 0;  // ---> jesli jest wolne pole zwroc 0
    return 1;
 }
 
@@ -147,8 +158,9 @@ int main() {
   system("clear");
   printf("*********************************************************\n");
   printf("==================== KOLKO I KRZYZYK ====================\n");
-  printf("Podaj rozmiar planszy na jakiej chcesz grac (od 3 do 10): ");
-  scanf("%d", &size);
+  //printf("Podaj rozmiar planszy na jakiej chcesz grac (od 3 do 10): ");
+  //scanf("%d", &size);
+  czy_dobry_size();
   char plansza[size][size];
   for (int i = 0; i < size; i++) {
     for (int j = 0; j < size; j++) {

@@ -158,8 +158,6 @@ int main() {
   system("clear");
   printf("*********************************************************\n");
   printf("==================== KOLKO I KRZYZYK ====================\n");
-  //printf("Podaj rozmiar planszy na jakiej chcesz grac (od 3 do 10): ");
-  //scanf("%d", &size);
   czy_dobry_size();
   char plansza[size][size];
   for (int i = 0; i < size; i++) {
